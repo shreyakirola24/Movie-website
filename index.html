@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search Website</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel = "stylesheet" href = "styles.css">
+</head>
+<body>
+    
+    <div class = "wrapper">
+        
+        <div class = "logo">
+            <div class = "container">
+                <p>Movie<span>Zone.</span></p>
+            </div>
+        </div>
+    
+        <div class = "search-container">
+            <div class = "search-element">
+                <h3>Search Movie:</h3>
+                <input type = "text" class = "form-control" placeholder="Search Movie Title ..." id = "movie-search-box" onkeyup="findMovies()" onclick = "findMovies()">
+
+                <div class = "search-list" id = "search-list">
+                    
+                   
+                     <div class = "search-list-item" >
+                        <div class = "search-item-thumbnail">
+                            
+                        </div>
+                        <!-- <div class = "search-item-info">
+                            <h3>Search your movies here</h3>
+                            <p>2017</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        
+        <div class="result-grid" id="result-grid" style="text-align: center;">
+            <p style="
+                font-size: 40px; 
+                font-weight: 900; 
+                line-height: 50px; 
+                color: white; 
+                padding: 20px; 
+                background-color: rgba(0, 0, 0, 0.7); 
+                border-radius: 10px; 
+                position: relative; 
+                left: 50%;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);">
+                Your streaming guide for movies, TV shows & sports
+            </p>
+            <br>
+            <p style="
+                font-size: 20px; 
+                font-weight: 700;
+                position: relative; 
+                left: 50%;
+                line-height: 30px; 
+                color: lightgrey; 
+                padding: 10px; 
+                margin-top: 10px;"  >
+                Find where to stream new, popular & upcoming entertainment with MovieZone.
+            </p>
+        </div>
+        <div class="movie-container" onclick="openDescription('Movie 1')">
+            <img src="https://www.uphe.com/sites/default/files/styles/scale__319w_/public/FastAndTheFurious_PosterArt.webp?itok=6NqUaKmu" alt="Movie 1 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">The Fast and the Furious</h3>
+            <a href="https://en.wikipedia.org/wiki/Fast_%26_Furious" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 1', event)">Add to Wishlist</button>
+        </div>
+    
+        
+        <div class="movie-container" onclick="openDescription('Movie 2')">
+            <img src="https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_FMjpg_UX1000_.jpg" alt="Movie 2 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">Oppenheimer (2023)</h3>
+            <a href="https://en.wikipedia.org/wiki/Oppenheimer_(film)
+            " style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 2', event)">Add to Wishlist</button>
+        </div>
+    
+        
+        <div class="movie-container" onclick="openDescription('Movie 3')">
+            <img src="https://m.media-amazon.com/images/M/MV5BOTgyOGQ1NDItNGU3Ny00MjU3LTg2YWEtNmEyYjBiMjI1Y2M5XkEyXkFqcGc@._V1_.jpg" alt="Movie 3 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">Fight Club (1999)</h3>
+            <a href="https://www.google.com/search?sca_esv=4ab121db594a558d&sca_upv=1&sxsrf=ADLYWIJ2f6rM0URJ0P70krANJ1vKCnBC9g:1725712822756&q=Oppenheimer+(2023)&source=lnms&fbs=AEQNm0BHe81ENDqBETLQnY7GvZ6DKUcIylne0I28qzCfQXwtcYlTAodTr1Xa_rScOC6YSHC26-Ta4NLLiKAenh9N6KJmruc_9izoG7sby9WzR6TEEa1IB8qpzYTf1AAomW7W3t608oowZjr4X2z4TnvViEkT4l-hklNsADC2KoFvvXc-UpoHV6SrErMQv0xLln91sGttnmqKbuN2zvCO9-9xFMVA-L5rug&sa=X&ved=2ahUKEwiCmaOe7bCIAxWK1jgGHe4MJHsQ0pQJegQICxAB&biw=638&bih=584&dpr=1.5" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 3', event)">Add to Wishlist</button>
+        </div>
+    
+        
+        <div class="movie-container" onclick="openDescription('Movie 4')">
+            <img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10543523_p_v8_as.jpg" alt="Movie 4 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">Interstellar (2014)</h3>
+            <a href="https://en.wikipedia.org/wiki/Interstellar_(film)" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 4', event)">Add to Wishlist</button>
+        </div>
+    
+       
+        <div class="movie-container" onclick="openDescription('Movie 5')">
+            <img src="https://m.media-amazon.com/images/M/MV5BZWE2ZWE5MDQtMTJlZi00MTVjLTkxOTgtNmNiYjg2NDIxN2NhXkEyXkFqcGdeQXVyMTUzMTg2ODkz._V1_.jpg" alt="Movie 5 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">The Flash (2023)</h3>
+            <a href="https://en.wikipedia.org/wiki/The_Flash_(film)" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 5', event)">Add to Wishlist</button>
+        </div>
+    
+        
+        <div class="movie-container" onclick="openDescription('Movie 6')">
+            <img src="https://miro.medium.com/v2/resize:fit:1400/0*TxZdqJf0MQ2mdL9p.jpg" alt="Movie 6 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">Gladiator (2000)</h3>
+            <a href="https://en.wikipedia.org/wiki/Gladiator_(2000_film)" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 6', event)">Add to Wishlist</button>
+        </div>
+    
+        <div class="movie-container" onclick="openDescription('Movie 7')">
+            <img src="data:image/jpeg;base64,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" alt="Movie 7 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">Barbie (2023) </h3>
+            <a href="https://en.wikipedia.org/wiki/Barbie_(film)" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 7', event)">Add to Wishlist</button>
+        </div>
+    
+       
+        <div class="movie-container" onclick="openDescription('Movie 8')">
+            <img src="https://m.media-amazon.com/images/M/MV5BM2U2YWU5NWMtOGI2Ni00MGMwLWFkNjItMjgyZWMxNjllNTMzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_FMjpg_UX1000_.jpg" alt="Movie 8 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">The Marvels (2023)</h3>
+            <a href="https://en.wikipedia.org/wiki/The_Marvels" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 8', event)">Add to Wishlist</button>
+        </div>
+    
+        
+        <div class="movie-container" onclick="openDescription('Movie 9')">
+            <img src="https://musicart.xboxlive.com/7/f3f05100-0000-0000-0000-000000000002/504/image.jpg?w=1920&h=1080" alt="Movie 9 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">Dune (2021)</h3>
+            <a href="https://en.wikipedia.org/wiki/Dune_(2021_film)" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 9', event)">Add to Wishlist</button>
+        </div>
+    
+        
+        <div class="movie-container" onclick="openDescription('Movie 10')">
+            <img src="https://static.miraheze.org/allthetropeswiki/thumb/2/2e/The_Dark_Knight_Film_Poster.jpg/450px-The_Dark_Knight_Film_Poster.jpg"alt="Movie 10 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">the dark knight</h3>
+            <a href="https://en.wikipedia.org/wiki/The_Dark_Knight" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 10', event)">Add to Wishlist</button>
+        </div>
+    
+        
+        <div class="movie-container" onclick="openDescription('Movie 11')">
+            <img src="https://m.media-amazon.com/images/M/MV5BOGU1MmMyNTMtMGE3Ni00N2E0LWFlYjEtMDIwNDk5NzUyODAzXkEyXkFqcGc@._V1_.jpg" alt="Movie 11 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">Belfast (2021)</h3>
+            <a href="https://en.wikipedia.org/wiki/Belfast_(film)" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 11', event)">Add to Wishlist</button>
+        </div>
+    
+
+        <div class="movie-container" onclick="openDescription('Movie 12')">
+            <img src="https://m.media-amazon.com/images/M/MV5BYWQ2NzQ1NjktMzNkNS00MGY1LTgwMmMtYTllYTI5YzNmMmE0XkEyXkFqcGdeQXVyMjM4NTM5NDY@._V1_.jpg" alt="Movie 12 Poster" style="width: 150px; border-radius: 10px;">
+            <h3 style="color: white;">No Time to Die (2021) </h3>
+            <a href="https://en.wikipedia.org/wiki/No_Time_to_Die" style="color: lightblue;">View More</a>
+            <button onclick="addToWishlist('Movie 12', event)">Add to Wishlist</button>
+            
+        </div> 
+        
+        <div id="wishlist-section">
+            <h2>Your Wishlist</h2>
+            <div id="wishlist-items"></div>
+        </div>
+w        
+    
+    </div>
+    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>
